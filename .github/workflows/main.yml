@@ -1,0 +1,55 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+      run: echo Hello, world!
+
+    # Runs a set of commands using the runners shell
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+        
+- name: GitHub Checks
+  uses: LouisBrunner/checks-action@v0.1.0
+  with:
+    # your GITHUB_TOKEN
+    token: 
+    # the name of your check
+    name: 
+    # the conclusion of your check
+    conclusion: 
+    # the status of your check
+    status: # optional, default is completed
+    # the url to call back to when using `action_required` as conclusion or with `actions`
+    action_url: # optional
+    # the output of your check
+    output: # optional
+    # the annotations of your check
+    annotations: # optional
+    # the images of your check
+    images: # optional
+    # the actions of your check
+    actions: # optional
