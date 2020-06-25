@@ -31,23 +31,7 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.   
-- name: GitHub Checks
-  uses: LouisBrunner/checks-action@v0.1.0
-  with:
-    # your GITHUB_TOKEN
-    token: 
-    # the name of your check
-    name: 
-    # the conclusion of your check
-    conclusion: 
-    # the status of your check
-    status: # optional, default is completed
-    # the url to call back to when using `action_required` as conclusion or with `actions`
-    action_url: # optional
-    # the output of your check
-    output: # optional
-    # the annotations of your check
-    annotations: # optional
+    
     # the images of your check
     images: # optional
     # the actions of your check
