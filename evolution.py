@@ -22,8 +22,35 @@ while True:
                 x = r.choice(list(creatures))
                 genesofcrature = list(creatures[x])
                 newgene = r.choice(genes)
-                genesofcrature.append(newgene)
-                t.sleep(1)
-                print ("{} has now have the {} gene".format(x, newgene))
+                if "Big" in genesofcrature and "Small" in genesofcrature:
+                    t.sleep(1)
+                    choice = r.randint(1, 2)
+                    if choice == 1:
+                        newgene = "Big"
+                        cause = "Small"
+                    else:
+                        newgene = "Small"
+                        cause = "Big"
+                    print ("{} has now lost the {} gene cause of the {} gene".format(x, newgene, cause))
+                    genesofcrature.remove(newgene)
+                elif "ATP User" in genesofcrature and "Glucose User" in genesofcrature:
+                    t.sleep(1)
+                    choice = r.randint(1, 2)
+                    if choice == 1:
+                        newgene = "ATP User"
+                        cause = "Glucose User"
+                    else:
+                        newgene = "Glucose User"
+                        cause = "ATP User"
+                    print ("{} has now lost the {} gene cause of the {} gene".format(x, newgene, cause))
+                    genesofcrature.remove(newgene)
+                elif newgene in genesofcrature:
+                    t.sleep(1)
+                    print ("{} has now lost the {} gene".format(x, newgene))
+                    genesofcrature.remove(newgene)
+                else:
+                    t.sleep(1)
+                    print ("{} has now have the {} gene".format(x, newgene))
+                    genesofcrature.append(newgene)
                 creatures[x] = genesofcrature
     t.sleep(1)
